@@ -1,0 +1,132 @@
+html {
+	background: #666;
+	font-size: 10px;
+	margin: 0;
+	padding: 0 1em;
+	overflow-x: hidden;
+}
+
+html::before,
+html::after {
+	content: "";
+	display: block;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+	z-index: 1;
+}
+
+html::before {
+	background: rgba(255, 255, 0, 0.25);
+	left: 0;
+}
+
+html::after {
+	background: rgba(255, 0, 0, 0.25);
+	right: 0;
+}
+
+body {
+	background: #ccc;
+	box-sizing: border-box;
+	font-size: 0;
+	margin: 0 auto;
+	max-width: 1024px;
+	min-height: 100vh;
+	position: relative;
+	padding: 80px 0;
+	width: 100%;
+	z-index: 2;
+}
+
+body::before,
+body::after {
+	content: "";
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 50%;
+	z-index: 1;
+}
+
+body::before {
+	background: rgba(255, 0, 255, 0.25);
+	left: 0;
+}
+
+body::after {
+	background: rgba(0, 255, 255, 0.25);
+	right: 0;
+}
+
+.box {
+	background: gray;
+	padding-bottom: 2rem;
+	padding-top: 2rem;
+}
+
+.content {
+	position: relative;
+	z-index: 3;
+}
+
+.full-width {
+	margin-left: calc((((100vw - 100%) / 2)) * -1);
+	margin-right: calc((((100vw - 100%) / 2)) * -1);
+	padding-left: calc((((100vw - 100%) / 2)));
+	padding-right: calc((((100vw - 100%) / 2)));
+}
+
+.full-width-content-bleeding {
+	margin-left: calc((((100vw - 100%) / 2)) * -1);
+	margin-right: calc((((100vw - 100%) / 2)) * -1);
+}
+
+.content-columns {
+	display: grid;
+	grid-column-gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+header,
+footer {
+	background: white;
+	left: 0;
+	height: 80px;
+	position: absolute;
+	width: 100%;
+	z-index: 3;
+}
+
+header {
+	top: 0;
+}
+
+footer {
+	bottom: 0;
+}
+
+h1 {
+	background: cyan;
+	font-size: 3rem;
+	line-height: 1.25em;
+}
+
+h2 {
+	background: orange;
+	font-size: 2rem;
+	line-height: 1.25em;
+}
+
+p {
+	background: yellow;
+	font-size: 1.6rem;
+	line-height: 1.5em;
+}
+
+img {
+	width: 100%;
+}
